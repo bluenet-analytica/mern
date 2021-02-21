@@ -8,7 +8,7 @@ pip3 install mern
 or
 
 ```bash
-git clone https://github.com/bluenet-analytica/mern.git
+git clone https://github.com/bluenet-analytica/mern.git && cd mern && pip3 install -r requirements.txt
 ```
 
 ### Remove outlier in numerical data
