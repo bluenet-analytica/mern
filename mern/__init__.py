@@ -1,1 +1,1 @@
-from .outlier import numeric
+from .numeric import NumericOutlier

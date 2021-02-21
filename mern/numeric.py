@@ -1,7 +1,6 @@
 import numpy as np
-import statistics
 
-class RemoverOutlier:
+class NumericOutlier:
 
     def _zscore(self, data = []):
         """
@@ -65,7 +64,3 @@ class RemoverOutlier:
                 return self._iqr(x)
         else:
             return ["Please tell me what kind of method do you want ? (zsocre, iqr)"]
-
-
-if __name__ != "__main__":
-    remover = RemoverOutlier()

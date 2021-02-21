@@ -19,15 +19,16 @@ There are 2 ways to remove data on numerical data type
 2. Inter Quartile Score Range (IQR Score)
 
 ```python
-from mern.outlier.numeric import remover
+from mern import NumericOutlier
 
-# using z score
-
+obj = NumericOutlier()
 x = [11,31,21,19,8,54,35,26,23,13,29,17]
-print(remover.find(x, "zscore"))
 
-# using iqr score
-print(remover.find(x, "iqr"))
+# using Z Score
+print(obj.find(x, "zscore"))
+
+# using Inter Quartile Range Score
+print(obj.find(x, "iqr"))
 ```
 
 That's it. 
