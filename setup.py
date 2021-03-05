@@ -23,7 +23,8 @@ setup(
               'artificial-intelegence'],
     install_requires=[
         'numpy',
-        'nltk'
+        'nltk',
+        'scikit-learn'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
