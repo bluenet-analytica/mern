@@ -23,6 +23,7 @@ setup(
               'artificial-intelegence'],
     install_requires=[
         'numpy',
+        'nltk'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
