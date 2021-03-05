@@ -2,7 +2,6 @@ README.md
 setup.cfg
 setup.py
 mern/__init__.py
-mern/numeric.py
 mern.egg-info/PKG-INFO
 mern.egg-info/SOURCES.txt
 mern.egg-info/dependency_links.txt
