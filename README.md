@@ -1,17 +1,20 @@
 # mern
+
 mern is python library to help us process our dataset, it can process numeric and text data
+
 ### Installation
 
 ```bash
 pip3 install mern
 ```
+
 or
 
 ```bash
 git clone https://github.com/bluenet-analytica/mern.git && cd mern && pip3 install -r requirements.txt
 ```
 
-### Remove outlier in numerical data
+### 1. Remove outlier in numerical data
 
 There are 2 ways to remove data on numerical data type
 
@@ -31,4 +34,25 @@ print(obj.find(x, "zscore"))
 print(obj.find(x, "iqr"))
 ```
 
-That's it. 
+### 2. Remove outlier in text data
+
+```python
+from mern import TextOutlier
+
+obj = TextOutlier()
+text = "abcd!G#45!"
+
+# remove punctuation ex : !@#$%
+no_punctuation = obj.remove_punctuation([text])
+print(no_punctuation)
+
+# remove stop words ex : this, the, a, etc
+# tweets by @SomeGuyAbides
+
+tweets = "Is a burning compressed liquid hydrogen as rocket fuel feasible for a propellant? Could this process be deleveloped through electrolysis of water? "
+
+no_sw = obj.remove_stopwords([tweets], lang="english")
+
+```
+
+That's it.
