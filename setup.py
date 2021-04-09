@@ -10,7 +10,7 @@ def readme():
 setup(
     name='mern',
     packages=['mern'],
-    version='0.4',
+    version='0.5',
     description=('data pre-processing library'),
     long_description=readme(),
     long_description_content_type="text/markdown",

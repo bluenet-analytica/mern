@@ -2,9 +2,10 @@ from nltk.corpus import stopwords
 import string
 import numpy as np
 
+
 class NumericOutlier:
 
-    def _zscore(self, data = []):
+    def _zscore(self, data=[]):
         """
         remove outlier with z - score fomula
         (x - mean) / standard deviation
@@ -13,16 +14,16 @@ class NumericOutlier:
         mean = np.mean(data)
         std = np.std(data)
         result = []
-        
+
         # calculate z - score
         for i in range(0, len(data)):
             calculation = (data[i] - mean) / std
             if calculation > 2 or calculation < -2:
                 result.append(data[i])
-            
+
         return result
 
-    def _iqr(self, data = []):
+    def _iqr(self, data=[]):
         """
         remove outlier with Interquartile Range Score
         iqr = Q3 - Q1
@@ -51,10 +52,10 @@ class NumericOutlier:
         for n in x:
             if n < min_data or n > max_data:
                 result.append(n)
-        
+
         return result
 
-    def find(self, x = [], method=None):
+    def find(self, x=[], method=None):
         """
         remove outlier
         it take list parameter and method (zscore, iqr score)
@@ -91,6 +92,7 @@ class TextOutlier:
         removing stop words ex: The, is, a
         """
         clean_text = []
+        stop_words = stopwords.words(lang)
         # remove stop words
 
         for text in data:
@@ -98,7 +100,7 @@ class TextOutlier:
             free_sw = []
             result = ''
             for sw in sentences:
-                if sw not in stopwords.words(lang):
+                if sw not in stop_words:
                     free_sw.append(sw)
 
             # merge words
