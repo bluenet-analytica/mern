@@ -92,22 +92,11 @@ class TextOutlier:
         removing stop words ex: The, is, a
         """
         clean_text = []
-        stop_words = stopwords.words(lang)
+        stop_words = set(stopwords.words(lang))
         # remove stop words
 
         for text in data:
-            sentences = text.lower().split()
-            free_sw = []
-            result = ''
-            for sw in sentences:
-                if sw not in stop_words:
-                    free_sw.append(sw)
-
-            # merge words
-            for words in free_sw:
-                result += words + " "
-            result = result[0:len(result) - 1]
-
-            clean_text.append(result)
+            clean_text.append(" ".join([t
+                                        for t in text.split() if t not in stop_words]))
 
         return clean_text
